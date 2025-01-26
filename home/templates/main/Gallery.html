@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+<br>
+
+
+{% block body %}
+<!--============================== Breadcumb ============================== -->
+<div class="breadcumb-wrapper " data-bg-src="{% static '' %}assets/img/bg/breadcumb-bg.jpg">
+    <div class="container">
+        <div class="breadcumb-content">
+            <h1 class="breadcumb-title">Our Gallery</h1>
+            <ul class="breadcumb-menu">
+                <li><a href="index.html">Home</a></li>
+                <li>Gallery</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--============================== Photo Area ==============================-->
+<section class="space">
+    <div class="container">
+        <div class="title-area text-center mb-40">
+            <span class="sub-title">Photo</span>
+            <h2 class="sec-title">Let’s See Our Latest Photo</h2>
+        </div>
+        <div class="row gallery-row filter-active">
+            <!-- Single Item -->
+            {% for i in gallery %}
+            <div class="col-md-6 col-xl-auto filter-item cat1">
+                <div class="project-box">
+                    <div class="project-box-img">
+                        <img src="{{i.image.url}}" style="width: 600px;height: 700px;" alt="project image">
+                    </div>
+                    <div class="project-box-content">
+                        <p class="project-subtitle">Deepak</p>
+                        <h3 class="box-title"><a>Complex</a></h3>
+                        <a href="{{i.image.url}}" class="gallery-btn popup-image"><i class="fa-regular fa-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+                        
+        </div>
+    </div>
+</section>
+
+
+{% endblock body %}

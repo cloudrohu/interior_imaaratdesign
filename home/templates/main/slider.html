@@ -1,0 +1,36 @@
+{% load static %}
+{% block slider %}
+
+
+<!--============================== Hero Area ==============================-->
+<div class="th-hero-wrapper hero-3" id="hero">
+    <div class="swiper th-slider hero-slider-3" id="heroSlide3" data-slider-options='{"effect":"fade"}'>
+        <div class="swiper-wrapper">
+            {% for i in slider %}
+            <div class="swiper-slide">
+                <div class="hero-inner">
+                    <div class="th-hero-bg" data-bg-src="">
+                        <img src="{{i.image.url}}" alt="Hero Image" style="height: 650px;">
+                        <div class="hero-shape-1" data-ani="slideinleft" data-ani-delay="0.7s"><img src="{% static '' %}assets/img/hero/hero_overlay_3_1.png" style="height: 650px;" alt=""></div>
+                    </div>
+                    <div class="container">
+                        <div class="hero-style3">
+                            <div class="hero-meta">
+                            </div>
+                            <h1 class="hero-title" data-ani="slideinleft" data-ani-delay="0.4s">
+                                {{i.title}} <span class="hero-text">{{i.sub_title}}</span> </h1>
+                            <div class="btn-group" data-ani="slideinup" data-ani-delay="0.6s">
+                                <a href="#" class="th-btn style1 th-style th-icon">Discover More<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+        <button data-slider-prev="#heroSlide3" class="slider-arrow slider-prev"><i class="far fa-arrow-left"></i></button>
+        <button data-slider-next="#heroSlide3" class="slider-arrow slider-next"><i class="far fa-arrow-right"></i></button>
+    </div>
+</div><br><br><br>
+{% endblock slider %}

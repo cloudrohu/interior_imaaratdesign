@@ -1,0 +1,113 @@
+<!-- footer-start -->
+{% load static %}
+{% for i in setting %}
+<!-- cta-area-start -->
+<!--============================== Footer Area ==============================-->
+<footer class="footer-wrapper bg-title footer-layout3">
+    <div class="container">
+        <div class="widget-area">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="widget footer-widget">
+                            <div class="th-widget-about">
+                                <div class="about-logo">
+                                    <a href="/"><img src="{{i.logo.url}}" style="height: 80px;" alt="logo"></a>
+                                </div>
+                                <p class="about-text">Architecture & Construction services offer tailored solutions to meet the unique needs and specifications of each project.</p>
+                                <div class="th-social style2">
+                                    <a href="{{i.facebook}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="{{i.twitter}}" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a href="{{i.youtube}}" target="_blank"><i class="fab fa-youtube"></i></a>
+                                    <a href="https://wa.me/+91{{i.whatsapp}}" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-auto">
+                        <div class="widget widget_nav_menu footer-widget">
+                            <h3 class="widget_title">Useful Links</h3>
+                            <div class="menu-all-pages-container">
+                                <ul class="menu">
+                                    <li><a href="{% url "aboutus" %}">About Us</a></li>
+                                    <li><a href="{% url "gallery" %}">Our Gallery</a></li>
+                                    <li><a href="#">Our Services</a></li>
+                                    <li><a href="#"> Our Team</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-auto">
+                        <div class="widget widget_nav_menu footer-widget">
+                            <h3 class="widget_title">Our Services</h3>
+                            <div class="menu-all-pages-container">
+                                <ul class="menu">
+                                    <li><a href="#">Architectural</a></li>
+                                    <li><a href="#">Construction</a></li>
+                                    <li><a href="#">Development</a></li>
+                                    <li><a href="#">Building</a></li>
+                                    <li><a href="#">Renovation</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-auto">
+                        <div class="widget widget_nav_menu footer-widget">
+                            <h3 class="widget_title">Quick Info</h3>
+                            <div class="menu-all-pages-container">
+                                <ul class="menu">
+                                    <li><a href="#">Our Story</a></li>
+                                    <li><a href="#">Appointment</a></li>
+                                    <li><a href="#">Terms & Condition</a></li>
+                                    <li><a href="#">Get In Touch</a></li>
+                                    <li><a href="#">Project Showcase</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-auto">
+                        <div class="widget footer-widget">
+                            <h3 class="widget_title">Contact Us</h3>
+                            <div class="th-widget-about style2">
+                                <h4 class="footer-info-title">Address Location</h4>
+                                <p class="footer-info"><i class="fas fa-map-marker-alt"></i>{{i.location}}</p>
+                                <h4 class="footer-info-title">Contact Number</h4>
+                                <p class="footer-info"><i class="fa-sharp fa-solid fa-phone"></i>
+                                    <span>
+                                        <a class="text-inherit" href="tel:{{i.phone}}"> {{i.phone}} </a>
+                                        <a class="text-inherit" href="{{i.email}}">{{i.email}}</a>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="form-group newsletter-form style3">
+                            <input class="form-control" type="email" placeholder="Enter Your Email...." required="">
+                            <button type="submit" class="newsletter-btn"><i class="fa-sharp fa-regular fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-wrap text-center">
+        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> <a href="/">{{i.copy_right}}</a>. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!--********************************Code End  Here ******************************** -->
+<!-- Scroll To Top -->
+<div class="scroll-top">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+        </path>
+    </svg>
+</div>
+{% endfor %}
+<!-- footer-end -->
+
+ 

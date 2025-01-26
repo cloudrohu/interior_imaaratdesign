@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block slider %} {% include 'main/slider.html' %} {% endblock %}
+
+
+
+{% block body %}
+
+    
+    <!--==============================  About Area  ==============================-->
+    <div class="overflow-hidden space-bottom" id="about-sec">
+        <div class="container">
+            <div class="row">
+                {% for i in about %}
+                <div class="col-xl-6">
+                    <div class="img-box4 me-xl-5 pe-xl-2">
+                        <div class="img1">
+                            <img src="{{i.image.url}}"  style="height: 550px;" alt="About">
+                            <br>
+                            <span class="about-text">About</span>
+                        </div>
+                        <div class="th-experience">
+                            <div class="th-experience_content">
+                                <p class="experience-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="title-area mb-25">
+                        <span class="sub-title style2"><img src="{% static '' %}assets/img/theme-img/title_left.svg" alt="shape">About Company</span>
+                        <p> <h2 class="sec-title mb-20">{{i.title}}</h2></p>               
+                    </div>
+                    <div class="about-item-wrap">
+                        <div class="about-item style2">
+                            <div class="about-item_centent">
+                                <h5 class="box-title"><span class="text-theme"></span> Years of Experience</h5>
+                                <p class="about-item_text">{{i.experience}}+</p>
+                            </div>
+                        </div>
+                        <div class="about-item style2">
+                            <div class="about-item_centent">
+                                <h5 class="box-title"><span class="text-theme"></span> Expert Technician</h5>
+                                <p class="about-item_text">{{i.technician}}+</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="{% url "aboutus" %}" class="th-btn th-style th-icon">More About Us <i class="fa-regular fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="marquee-section overflow-hidden">
+        <div class="marquee-wrapper">
+            <div class="marquee">
+                <div class="marquee-group">
+
+                    {% for i in contentclider %}
+                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">{{i.title}}</div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+
+<!--============================== Service Area  ==============================-->
+    <section class="service-area4 space" id="service-sec" data-bg-src="{% static '' %}assets/img/bg/service_bg_3.jpg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="title-area text-center">
+                        <span class="sub-title style2"><img src="{% static '' %}assets/img/theme-img/title_left.svg" alt="shape">Our Services</span>
+                        <h2 class="sec-title">Elevating Customer SatisfiedHomes, Inspiring Lives Through Renovation</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-area">
+                <div class="swiper th-slider has-shadow" id="serviceSlider4" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"}}}'>
+                    <div class="swiper-wrapper">
+                        {% for i in service %}
+                        <div class="swiper-slide">
+                            <div class="service-item th-ani">
+                                <div class="{{i.get_absolute_url}}">
+                                    <img src="{{i.image.url}}" style="height: 250px;" alt="Icon">
+                                </div>
+                                <br>
+                                <div class="service-item_content">
+                                    <h3 class="box-title"><a href="{{i.get_absolute_url}}">{{i.title}}</a></h3>
+                                    <a href="{{i.get_absolute_url}}" class="icon-btn th-icon"><i class="fa-regular fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button data-slider-prev="#serviceSlider4" class="slider-arrow slider-prev"><i class="far fa-arrow-left"></i></button>
+                <button data-slider-next="#serviceSlider4" class="slider-arrow slider-next"><i class="far fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+<!--============================== Faq Area ==============================-->
+    <div class="faq-area2 position-relative space overflow-hidden" id="faq-sec">
+        <div class="container th-container2">
+            <div class="row align-items-center">
+                <div class="col-xl-6">
+                    <div class="faq-img2">
+                        <div class="img1">
+                            <img src="{% static '' %}assets/img/about/faq_img2.jpg" alt="faq">
+                        </div>
+                        <div class="about-company-since-wrap">
+                            <div class="experience-wrap">
+                                <span>SINCE IN</span>2022
+                            </div>
+                            <div class="about-tag">
+                                <span class="about-anime">We Are Best Architecture Company</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="title-area mb-30">
+                        <span class="sub-title style2"><img src="{% static '' %}assets/img/theme-img/title_left.svg" alt="shape">Some Faq</span>
+                        <h2 class="sec-title">Final Inspections, Occupancy Permits, And Project.</h2>
+                    </div>
+                    <div class="accordion" id="faqAccordion">                        
+                        {% for i in faq %}
+                        <div class="accordion-card style3">
+                            <div class="accordion-header" id="collapse-item-2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">{{i.question}}</button>
+                            </div>
+                            <div id="collapse-2" class="accordion-collapse collapse " aria-labelledby="collapse-item-2" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="faq-text">{{i.answer}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--============================== Cta Area  ==============================-->
+    <section class="cta-area3 space" data-overlay="title" data-opacity="9" data-bg-src="{% static '' %}assets/img/bg/cta_bg_1.jpg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="title-area text-center mb-0 text-lg-start">
+                        <span class="sub-title style2 mb-20"><img src="{% static '' %}assets/img/theme-img/title_left.svg" alt="shape">Get Consultation</span>
+                        <h2 class="sec-title text-white">Get A Free Consultation Contact Us <span class="text-theme">!</span></h2>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="cta-group justify-content-lg-end justify-content-center">
+                        <a href="contact.html" class="th-btn style1 th-style th-icon">Get Consultations<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                        <a href="contact.html" class="th-btn style3 th-style th-icon">Work With Us<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock body %}

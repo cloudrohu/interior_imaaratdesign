@@ -1,0 +1,223 @@
+  
+  {% load static %}
+  <!-- header-start -->
+  {% for i in setting %}
+  <div class="cursor"></div>
+  <div class="cursor2"></div>
+  {% for i in setting %}
+  <!--============================== Preloader ==============================-->
+  <div id="preloader" class="preloader ">
+      <div id="loader" class="th-preloader">
+          <div class="animation-preloader">
+              <div class="txt-loading">
+                  
+              </div>
+          </div>
+      </div>
+  </div> 
+
+  <!--============================== Sidemenu ============================== -->
+  <div class="sidemenu-wrapper sidemenu-info ">
+      <div class="sidemenu-content">
+          <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
+          <div class="widget  ">
+              <div class="th-widget-about">
+                  <div class="about-logo">
+                      <a href="/"><img src="{{i.logo.url}}" style="height: 80px;" alt="logo"></a>
+                  </div>
+                  <p class="about-text">Architect and Interior Designer in Lucknow</p>
+                  <div class="th-social style2">
+                      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                      <a href="https://in.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="https://www.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="widget  ">
+              <h3 class="widget_title">Contact Us</h3>
+              <div class="th-widget-about">
+                  <h4 class="footer-info-title">Address Location</h4>
+                  <p class="footer-info"><i class="fas fa-map-marker-alt"></i>{{i.location}}</p>
+                  <h4 class="footer-info-title">Phone Number</h4>
+                  <p class="footer-info"><i class="fa-sharp fa-solid fa-phone"></i><a class="text-inherit" href="tel:+91{{i.phone}}">{{i.phone}}</a></p>
+                  <h4 class="footer-info-title">Email Address</h4>
+                  <p class="footer-info"><i class="fas fa-envelope"></i><a class="text-inherit" href="{{i.email}}">{{i.email}}</a></p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="popup-search-box">
+      <button class="searchClose"><i class="fal fa-times"></i></button>
+      <form action="#">
+          <input type="text" placeholder="What are you looking for?">
+          <button type="submit"><i class="fal fa-search"></i></button>
+      </form>
+  </div>
+
+  <!--============================== Mobile Menu ============================== -->
+  <div class="th-menu-wrapper">
+      <div class="th-menu-area text-center">
+          <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
+          <div class="mobile-logo">
+              <a href="/"><img src="{{i.logo.url}}" style="height: 80px;" alt="logo"></a>
+          </div>
+          <div class="th-mobile-menu">
+              <ul>
+                  <li><a href="/">Home</a></li>
+                  <li class="menu-item-has-children">
+                      <a>About</a>
+                      <ul class="sub-menu">
+                          <li><a href="{% url "aboutus" %}">About Company</a></li>
+                          <li><a href="{% url "vision-mission" %}">Vision Mission</a></li>
+                          <li><a href="{% url "director-desk" %}">Director Desk</a></li>
+                          <li><a href="{% url "vision-mission" %}">Team</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="{% url "service" %}">Services</a></li>
+                  <li class="menu-item-has-children">
+                      <a>Projects</a>
+                      <ul class="sub-menu">
+                        <li><a href="{% url "complate_project" %}">Complate Projects</a></li>
+                        <li><a href="{% url "ongoing_project" %}">Ongoing Projects</a></li>
+                        <li><a href="{% url "Upcoming_project" %}">Upcoming Projects</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="{% url "gallery" %}">Gallery</a></li>
+                  <li><a href="{% url "blog" %}">Blogs</a></li>
+                  <li>
+                      <a href="{% url "contactus" %}">Contact us</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <!--============================== Header Area ==============================-->
+  <header class="th-header bg-white header-layout3">
+  
+  <!--============================== Main Menu ==============================-->
+      <div class="sticky-wrapper">
+          <div class="menu-area">
+              <div class="container th-container">
+                  <div class="row justify-content-between align-items-center">
+                      <div class="col-auto">
+                          <div class="header-logo">
+                              <a href="/"><img src="{{i.logo.url}}" style="height: 80px;" alt="logo"></a>
+                          </div>
+                      </div>
+                      <div class="col-auto d-none d-lg-block sticky-d-none">
+                          <div class="info-card-wrap">
+                              <div class="info-card">
+                                  <div class="info-card_icon">
+                                      <img src="{% static '' %}assets/img/icon/call2.svg" alt="">
+                                  </div>
+                                  <div class="info-card_content">
+                                      <p class="info-card_text">Call Us Any Time:</p>
+                                      <a href="tel:{{i.phone}}" class="info-card_link">{{i.phone}}</a>
+                                  </div>
+                              </div>
+                              <div class="info-card">
+                                  <div class="info-card_icon">
+                                      <img src="{% static '' %}assets/img/icon/mail.svg" alt="">
+                                  </div>
+                                  <div class="info-card_content">
+                                      <p class="info-card_text">Email Us:</p>
+                                      <a href="mailto:{{i.email}}" class="info-card_link">{{i.email}}</a>
+                                  </div>
+                              </div>
+                              <div class="info-card">
+                                  <div class="info-card_icon">
+                                      <img src="{% static '' %}assets/img/icon/location.svg" alt="">
+                                  </div>
+                                  <div class="info-card_content">
+                                      <span class="info-card_label">Location Address:</span>
+                                      <p class="info-card_link">{{i.location}}</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-auto sticky-d-block">
+                          <nav class="main-menu d-none d-lg-inline-block">
+                              <ul>
+                                  <li><a href="/">Home</a></li>
+                                  <li class="menu-item-has-children">
+                                          <a>About</a>
+                                          <ul class="sub-menu">
+                                            <li><a href="{% url "aboutus" %}">About Company</a></li>
+                                            <li><a href="{% url "vision-mission" %}">Vision Mission</a></li>
+                                            <li><a href="{% url "director-desk" %}">Director Desk</a></li>
+                                            <li><a href="{% url "vision-mission" %}">Team</a></li>
+                                        </ul>
+                                      </li>
+                                  <li><a href="{% url "service" %}">Services</a></li>
+                                  <li class="menu-item-has-children">
+                                          <a>Projects</a>
+                                          <ul class="sub-menu">
+                                            <li><a href="{% url "complate_project" %}">Complate Projects</a></li>
+                                            <li><a href="{% url "ongoing_project" %}">Ongoing Projects</a></li>
+                                            <li><a href="{% url "Upcoming_project" %}">Upcoming Projects</a></li>
+                                              
+                                          </ul>
+                                      </li>
+                                  <li><a href="{% url "gallery" %}">Gallery</a></li>
+                                  <li><a href="{% url "blog" %}">Blog</a></li>
+                                  <li>
+                                      <a href="{% url "contactus" %}">Contact us</a>
+                                  </li>
+                              </ul>
+                          </nav>
+                      </div>
+                      <div class="col-auto d-lg-none">
+                          <button class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
+                      </div>
+                  </div>
+                  <div class="main-menu-area">
+                      <div class="row justify-content-between align-items-center">
+                          <div class="col-auto">
+                              <nav class="main-menu d-none d-lg-inline-block">
+                                  <ul>
+                                      <li><a href="/">Home</a></li>
+                                      <li class="menu-item-has-children">
+                                          <a>About</a>
+                                          <ul class="sub-menu">
+                                            <li><a href="{% url "aboutus" %}">About Company</a></li>
+                                            <li><a href="{% url "vision-mission" %}">Vision Mission</a></li>
+                                            <li><a href="{% url "director-desk" %}">Director Desk</a></li>
+                                            <li><a href="{% url "vision-mission" %}">Team</a></li>
+                                        </ul>
+                                      </li>
+                                      <li><a href="{% url "service" %}">Services</a></li>
+                                      <li class="menu-item-has-children">
+                                          <a>Projects</a>
+                                          <ul class="sub-menu">
+                                            <li><a href="{% url "complate_project" %}">Complate Projects</a></li>
+                                            <li><a href="{% url "ongoing_project" %}">Ongoing Projects</a></li>
+                                            <li><a href="{% url "Upcoming_project" %}">Upcoming Projects</a></li>
+                                          </ul>
+                                      </li>
+                                      <li><a href="{% url "gallery" %}">Gallery</a></li>
+                                      <li><a href="{% url "blog" %}">Blog</a></li>
+                                      <li>
+                                          <a href="{% url "contactus" %}">Contact us</a>
+                                      </li>
+                                  </ul>
+                              </nav>
+                          </div>
+                          <div class="col-auto d-none d-lg-block">
+                              <div class="header-button">
+                                  <button type="button" class="simple-btn searchBoxToggler"><i class="far fa-search"></i></button>
+                                  <a href="#" class="simple-btn sideMenuToggler"><i class="fa-solid fa-grid"></i></a>
+                                  <a href="{% url "contactus" %}" class="th-btn style6 th-style th-icon">GET A QUOTE<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+  {% endfor %}
+
+  {% endfor %}
+  <!-- header-end -->

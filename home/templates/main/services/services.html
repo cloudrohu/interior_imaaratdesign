@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+<br>
+
+
+{% block body %}
+
+<!--============================== Breadcumb ============================== -->
+<div class="breadcumb-wrapper " data-bg-src="{% static '' %}assets/img/bg/breadcumb-bg.jpg">
+   <div class="container">
+       <div class="breadcumb-content">
+           <h1 class="breadcumb-title">Our Service</h1>
+           <ul class="breadcumb-menu">
+               <li><a href="/">Home</a></li>
+               <li>Service</li>
+           </ul>
+       </div>
+   </div>
+</div>
+
+<!--============================== Project Area ==============================-->
+<section class="th-blog-wrapper space-top space-extra-bottom">
+   <div class="container">
+       <div class="row">
+
+            {% for i in service %}
+           <div class="col-lg-6 col-xl-4">
+               <div class="th-blog blog-single blog-grid has-post-thumbnail">
+                   <div class="blog-img">
+                       <a href="{{i.get_absolute_url}}"><img src="{{i.image.url}}" style="height: 375px;" alt="Blog Image"></a>
+                   </div>
+                   <div class="blog-content">                       
+                       <h2 class="box-title"><a href="{{i.get_absolute_url}}">{{i.title}}</a> </h2>
+                       <a href="{{i.get_absolute_url}}" class="line-btn th-icon">Read More<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                   </div>
+               </div>
+           </div>
+           {% endfor %}
+
+       </div>
+   </div>
+</section>
+
+{% endblock body %}
